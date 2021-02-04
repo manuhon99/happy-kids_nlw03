@@ -124,11 +124,11 @@ export default function Orphanage() {
                 ) 
               }
             </div>
-            {<a href={`https://api.whatsapp.com/send?phone=${orphanage.telephone}&text=${orphanage.message}`}>
-            {<button type="button" className="contact-button" >
-              <FaWhatsapp size={20} color="#FFF" />
-              Entrar em contato
-            </button>}
+            {<a href={`https://api.whatsapp.com/send?phone=${orphanage.telephone}&text=${orphanage.message}`} target="_blank" rel="noopener noreferrer">
+              <button type="button" className="contact-button">
+                <FaWhatsapp size={20} color="#FFF" />
+                Entrar em contato
+              </button>
             </a>}
           </div>
         </div>

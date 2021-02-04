@@ -146,9 +146,12 @@
   color: #ff6690;
 }
 
+.orphanage-details .orphanage-details-content a{
+  text-decoration: none;
+}
+
 .orphanage-details .orphanage-details-content button.contact-button {
   margin-top: 64px;
-
   width: 100%;
   height: 64px;
   border: 0;

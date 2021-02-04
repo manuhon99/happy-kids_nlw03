@@ -22,6 +22,8 @@ export default function CreateOrphanage() {
   const [instructions, setInstructions] = useState('')
   const [opening_hours, setOpeningHours] = useState('')
   const [open_on_weekends, setOpenOnWeekends] = useState(true)
+  const [telephone, setTelephone] = useState('')
+  const [message, setMessage] = useState('')
   const [images, setImages] = useState<File[]>([])
   const [previewImages, setPreviewImages] = useState<string[]>([])
 
@@ -59,6 +61,8 @@ export default function CreateOrphanage() {
     data.append('instructions', instructions)
     data.append('opening_hours', opening_hours)
     data.append('open_on_weekends', String(open_on_weekends))
+    data.append('telephone', telephone)
+    data.append('message', message)
     images.forEach(image => data.append("images", image))
 
     await api.post('/orphanages', data)
@@ -108,10 +112,25 @@ export default function CreateOrphanage() {
 
             <div className="input-block">
               <label htmlFor="about">Sobre <span>Máximo de 300 caracteres</span></label>
-              <textarea id="name" maxLength={300} 
+              <textarea id="about" maxLength={300} 
               value={about} 
               onChange={event => setAbout(event.target.value)} />
             </div>
+
+            <div className="input-block">
+              <label htmlFor="telephone">Telefone</label>
+              <input id="telephone" 
+              value={telephone} 
+              onChange={event => setTelephone(event.target.value)} />
+            </div>
+
+            <div className="input-block">
+              <label htmlFor="message">Mensagem de contato</label>
+              <input id="message" 
+              value={message} 
+              onChange={event => setMessage(event.target.value)} />
+            </div>
+
 
             <div className="input-block">
               <label htmlFor="images">Fotos</label>
