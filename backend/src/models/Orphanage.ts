@@ -33,6 +33,12 @@ import {
   
     @Column()
     open_on_weekends: boolean;
+
+    @Column()
+    telephone: string;
+
+    @Column()
+    message: string;
   
     @OneToMany(() => Image, (image) => image.orphanage, {
       cascade: ['insert', 'update'],
@@ -40,3 +46,7 @@ import {
     @JoinColumn({ name: 'orphanage_id' })
     images: Image[];
   }
+
+
+//yarn typeorm migration:revert
+//yarn typeorm migration:run
